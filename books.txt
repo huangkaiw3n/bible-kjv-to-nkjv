@@ -1,0 +1,66 @@
+Genesis	创世记	Kejadian	Genesis	创
+Exodus	出埃及记	Keluaran	Exodus	出
+Leviticus	利未记	Imamat	Leviticus	利
+Numbers	民数记	Bilangan	Numbers	民
+Deuteronomy	申命记	Ulangan	Deuteronomy	申
+Joshua	约书亚记	Yosua	Joshua	书
+Judges	士师记	Hakim-hakim	Judges	士
+Ruth	路得记	Rut	Ruth	得
+1 Samuel	撒母耳记上	1 Samuel	1 Samuel	撒上
+2 Samuel	撒母耳记下	2 Samuel	2 Samuel	撒下
+1 Kings	列王纪上	1 Raja-raja	1 Kings	王上
+2 Kings	列王纪下	2 Raja-raja	2 Kings	王下
+1 Chronicles	历代志上	1 Tawarikh	1 Chronicles	代上
+2 Chronicles	历代志下	2 Tawarikh	2 Chronicles	代下
+Ezra	以斯拉记	Ezra	Ezra	拉
+Nehemiah	尼希米记	Nehemia	Nehemiah	尼
+Esther	以斯帖记	Ester	Esther	斯
+Job	约伯记	Ayub	Job	伯
+Psalms	诗篇	Mazmur	Psalms	诗
+Proverbs	箴言	Amsal	Proverbs	箴
+Ecclesiastes	传道书	Pengkhotbah	Ecclesiastes	传
+Song of Solomon	雅歌	Kidung Agung	Songs	歌
+Isaiah	以赛亚书	Yesaya	Isaiah	赛
+Jeremiah	耶利米书	Yeremia	Jeremiah	耶
+Lamentation	耶利米哀歌	Ratapan	Lamentation	哀
+Ezekiel	以西结书	Yehezkiel	Ezekiel	结
+Daniel	但以理书	Daniel	Daniel	但
+Hosea	何西阿书	Hosea	Hosea	何
+Joel	约珥书	Yoel	Joel	珥
+Amos	阿摩司书	Amos	Amos	摩
+Obadiah	俄巴底亚书	Obaja	Obadiah	俄
+Jonah	约拿书	Yunus	Jonah	拿
+Micah	弥迦书	Mikha	Micah	弥
+Nahum	那鸿书	Nahum	Nahum	鸿
+Habakkuk	哈巴谷书	Habakuk	Habakkuk	哈
+Zephaniah	西番雅书	Zefanya	Zephaniah	番
+Haggai	哈该书	Hagai	Haggai	该
+Zechariah	撒迦利亚	Zakharia	Zechariah	亚
+Malachi	玛拉基书	Maleakhi	Malachi	玛
+Matthew	马太福音	Matius	Matthew	太
+Mark	马可福音	Markus	Mark	可
+Luke	路加福音	Lukas	Luke	路
+John	约翰福音	Yohanes	John	约
+Acts	使徒行传	Kisah	Acts	徒
+Romans	罗马书	Roma	Romans	罗
+1 Corinthians	哥林多前书	1 Korintus	1 Cor	林前
+2 Corinthians	哥林多后书	2 Korintus	2 Cor	林后
+Galatians	加拉太书	Galatia	Galatians	加
+Ephesians	以弗所书	Efesus	Ephesians	弗
+Philippians	腓立比书	Filipi	Philippians	腓
+Colossians	歌罗西书	Kolose	Colossians	西
+1 Thessalonians	帖撒罗尼迦前书	1 Tesalonika	1 Thess	帖前
+2 Thessalonians	帖撒罗尼迦后书	2 Tesalonika	2 Thess	帖后
+1 Timothy	提摩太前书	1 Timotius	1 Timothy	提前
+2 Timothy	提摩太后书	2 Timotius	2 Timothy	提后
+Titus	提多书	Titus	Titus	多
+Philemon	腓利门书	Flmon	Philemon	门
+Hebrews	希伯来书	Ibrani	Hebrews	来
+James	雅各书	Yakobus	James	雅
+1 Peter	彼得前书	1 Petrus	1 Peter	彼前
+2 Peter	彼得后书	2 Petrus	2 Peter	彼得
+1 John	约翰一书	1 Yohanes	1 John	约一
+2 John	约翰二书	2 Yohanes	2 John	约二
+3 John	约翰三书	3 Yohanes	3 John	约三
+Jude	犹大书	Yudas	Jude	犹
+Revelation	启示录	Wahyu	Revelation	启
