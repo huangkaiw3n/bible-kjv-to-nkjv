@@ -1,9 +1,12 @@
 const LineByLineReader = require('line-by-line')
 const _ = require('lodash')
+const fs = require('fs')
 
 const nkjv = require('./nkjv.json').books
 
-lr = new LineByLineReader('text.txt')
+const lr = new LineByLineReader('text.txt')
+
+let buffer = ''
 
 lr.on('error', function (err) {
 	// 'err' contains error object
@@ -11,11 +14,17 @@ lr.on('error', function (err) {
 })
 
 lr.on('line', function (line) {
-	console.log(getNewLine(line))
+	buffer = buffer + getNewLine(line) + '\n'
 })
 
 lr.on('end', function () {
-	console.log('ended!')
+	console.log('ended reading text file.')
+	fs.writeFile('output.txt', buffer, (err) => {
+	    // throws an error, you could also catch it here
+	    if (err) throw err
+	    // success case, the file was saved
+	    console.log('File saved!')
+	})
 })
 
 function getNewLine (line) {
