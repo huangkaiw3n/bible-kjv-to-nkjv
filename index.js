@@ -5,9 +5,9 @@ const fs = require('fs')
 const nkjv = require('./nkjv.json').books
 const bookToChapters = require('./bookToChapters')
 
-readFile('text.txt')
+sanityCheck('text.txt')
 
-function readFile (filePath) {
+function sanityCheck (filePath) {
 	// Buffer to store text
 	let buffer = ''
 	const lr = new LineByLineReader(filePath)
