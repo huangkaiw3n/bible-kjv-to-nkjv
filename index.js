@@ -5,7 +5,8 @@ const fs = require('fs')
 const nkjv = require('./nkjv.json').books
 const bookToChapters = require('./bookToChapters')
 
-sanityCheck('text.txt')
+// sanityCheck('reorderedText.txt')
+// reorderLines('output.txt')
 
 function sanityCheck (filePath) {
 	// Buffer to store text
@@ -31,6 +32,8 @@ function sanityCheck (filePath) {
 		chapter = parseInt(chapter)
 		verse = parseInt(verse)
 
+		// console.log(`${book} ${chapter} ${verse}`)
+
 		// If book is different from expectedBook
 		if (expectedBook !== book) {
 			// If expectedBook is not 1 lesser than book, or
@@ -39,11 +42,16 @@ function sanityCheck (filePath) {
 			// to 1
 			if (expectedBook !== book - 1 || chapter !== 1) {
 				console.log('wrong book', line)
+				console.log('expectedBook', expectedBook)
+				console.log('expectedChapter', expectedChapter)
+				console.log('expectedVerse', expectedVerse)
 				lr.close()
 				return
 			} else {
 				++expectedBook
+		    totalChaptersForBook = bookToChapters[expectedBook]
 				expectedChapter = 1
+				expectedVerse = 1
 			}
 		}
 
@@ -55,6 +63,9 @@ function sanityCheck (filePath) {
 			// to 1
 			if (expectedChapter !== chapter - 1 || chapter > totalChaptersForBook) {
 				console.log('wrong chapter', line)
+				console.log('expectedBook', expectedBook)
+				console.log('expectedChapter', expectedChapter)
+				console.log('expectedVerse', expectedVerse)
 				lr.close()
 				return
 			} else {
@@ -70,6 +81,9 @@ function sanityCheck (filePath) {
 			// to 1
 			if (expectedVerse !== verse - 1) {
 				console.log('wrong verse', line)
+				console.log('expectedBook', expectedBook)
+				console.log('expectedChapter', expectedChapter)
+				console.log('expectedVerse', expectedVerse)
 				lr.close()
 				return
 			} else {
@@ -86,8 +100,62 @@ function sanityCheck (filePath) {
 	})
 }
 
-function writeToFile (buffer) {
-	const OUTPUT_FILE_NAME = 'output.txt'
+function reorderLines (filePath) {
+	// Map to store text
+	let textMap = {}
+	const lr = new LineByLineReader(filePath)
+
+	// Error handler for linereader
+	lr.on('error', function (err) {
+		// 'err' contains error object
+		console.log('error', err)
+	})
+
+	// On each line, store line into respective
+	lr.on('line', function (line) {
+		let split = _.split(line, '\t')
+		let [ book, chapter, verse, oldEngText, chineseText, malayText ] = split
+		book = parseInt(book)
+		chapter = parseInt(chapter)
+		verse = parseInt(verse)
+		textMap[`${book}.${chapter}.${verse}`] = line
+	})
+
+	// On end
+	lr.on('end', () => {
+		console.log('ended reading text file.')
+
+		// Buffer to store reordered lines
+		let buffer = ''
+		let bookOrder = 0
+		let chapterOrder = 0
+		let verseOrder = 0
+		_.forEach(nkjv, (book) => {
+			bookOrder++
+			chapterOrder = 0
+			verseOrder = 0
+			let chapters = book.chapters
+			_.forEach(chapters, (chapter) => {
+				chapterOrder++
+				verseOrder = 0
+				let verses = chapter.verses
+				_.forEach(verses, (verse) => {
+					verseOrder++
+					let key = `${bookOrder}.${chapterOrder}.${verseOrder}`
+					if (!textMap[key]) {
+						console.log(key)
+					}
+					buffer = buffer + textMap[key] + '\n'
+				})
+			})
+		})
+		writeToFile(buffer, 'reorderedText.txt')
+	})
+}
+
+function writeToFile (buffer, fileName) {
+	if (!fileName) throw Error('No output file name provided')
+	const OUTPUT_FILE_NAME = fileName
 	fs.writeFile(OUTPUT_FILE_NAME, buffer, (err) => {
     // throws an error, you could also catch it here
     if (err) throw err
